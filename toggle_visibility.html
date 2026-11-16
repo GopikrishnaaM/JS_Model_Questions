@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Paragraph</title>
+</head>
+<body>
+
+  <button id="toggleBtn" type="button">Toggle Paragraph</button>
+  <p id="myParagraph">This paragraph will appear and disappear when you click the button.</p>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const paragraph = document.getElementById('myParagraph');
+
+    toggleBtn.addEventListener('click', function() {
+      // Flips the boolean value between true and false on each click
+      paragraph.hidden = !paragraph.hidden;
+    });
+  </script>
+
+</body>
+</html>

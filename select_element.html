@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // SELECT BY ID
+
+    // Using querySelector (requires '#' prefix)
+    const header = document.querySelector('#main-header');
+
+    // Using getElementById (no '#' prefix)
+    const headerClassic = document.getElementById('main-header');
+
+    // ------------------------------------------------------------------------
+
+    // SELECT BY CLASS
+
+    // Selects ONLY the FIRST element with class="card" (requires '.' prefix)
+    const firstCard = document.querySelector('.card');
+
+    // Selects ALL elements with class="card" as a NodeList
+    const allCards = document.querySelectorAll('.card');
+
+    // Classic method: returns a live HTMLCollection (no '.' prefix)
+    const allCardsClassic = document.getElementsByClassName('card');
+
+    // ------------------------------------------------------------------------
+
+    // SELECT BY TAG
+
+    // Selects ONLY the FIRST <button> on the page
+    const firstButton = document.querySelector('button');
+
+    // Selects ALL <button> elements on the page as a NodeList
+    const allButtons = document.querySelectorAll('button');
+
+    // Classic method: returns a live HTMLCollection
+    const allButtonsClassic = document.getElementsByTagName('button');
+
+
+</script>
+</body>
+</html>

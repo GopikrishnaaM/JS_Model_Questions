@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <!-- HTML -->
+  <button id="my-btn">Click Me</button>
+    
+  <script>
+  // method 1
+
+  const button = document.querySelector('#my-btn');
+  button.addEventListener('click', function() {
+    console.log('The button was clicked!');
+  });
+
+  </script>
+
+  <script>
+  // method 2
+
+  const button2 = document.querySelector('#my-btn');
+  function handleClick() {
+  console.log('Handled by a named function!');
+  }
+  // Pass 'handleClick', NOT 'handleClick()'
+  button.addEventListener('click', handleClick);
+  </script>
+  
+</body>
+</html>

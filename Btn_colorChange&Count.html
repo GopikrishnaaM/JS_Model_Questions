@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+<style>
+  .liked {
+    background-color: pink;
+    color: red;
+  }
+</style>
+</head>
+<body>
+
+  <!-- create a like button that changes color and count on click. 
+     and prevent double clicking -->
+    
+  <!-- HTML -->
+  <button id="like-btn">Like (<span id="like-count">0</span>)</button>
+
+  <!-- JavaScript -->
+  <script>
+  
+  const button = document.getElementById('like-btn');
+  const countSpan = document.getElementById('like-count');
+  let isLocked = false;
+
+  button.addEventListener('click', () => {
+    // 1. Prevent double-clicking
+    if (isLocked) return;
+    isLocked = true;
+
+    // 2. Toggle color class and get state (true or false)
+    const isLiked = button.classList.toggle('liked');
+
+    // 3. Update the count
+    let count = Number(countSpan.textContent);
+    countSpan.textContent = isLiked ? count + 1 : count - 1;
+
+    // 4. Unlock after 500ms
+    setTimeout(() => {
+      isLocked = false;
+    }, 500);
+  });
+  </script>
+
+</body>
+</html>

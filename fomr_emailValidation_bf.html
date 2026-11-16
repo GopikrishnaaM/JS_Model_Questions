@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+
+    <h2>Email Validation Form</h2>
+
+    <form id="emailForm">
+        <label>Enter Email:</label>
+        <input type="text" id="email" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("emailForm").addEventListener("submit", function(event) {
+
+            let email = document.getElementById("email").value;
+
+            let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (!pattern.test(email)) {
+                event.preventDefault();
+
+                document.getElementById("message").innerHTML =
+                    "Invalid email format. Please enter a valid email.";
+
+            } else {
+                document.getElementById("message").innerHTML =
+                    "Email is valid. Form submitted!";
+            }
+
+        });
+    </script>
+
+</body>
+</html>

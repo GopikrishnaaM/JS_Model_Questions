@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <!-- write a javascript function to implement a function to show an alert and 
+     then disable a button after clicking -->
+    
+  <!-- HTML -->
+  <button id="submit-btn">Click Me Once</button>
+
+
+  <!-- JavaScript -->
+  <script>
+      
+    function alertAndDisableButton(buttonSelector, message) 
+    {
+      const button = document.querySelector(buttonSelector);
+
+      if (button) 
+      {
+        button.addEventListener('click', () => {
+        alert(message);
+        button.disabled = true;
+        });
+      }
+    }
+
+    alertAndDisableButton('#submit-btn', 'Form submitted! This button is now disabled.');
+  </script>
+
+</body>
+</html>

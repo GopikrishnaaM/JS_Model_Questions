@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+<style>
+  .box {
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+  }
+
+  .is-active {
+    background-color: #ffeeba;
+    border-color: #ffc107;
+    font-weight: bold;
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- write a javascript function to toggle a class on an element 
+   when a button is clicked -->
+  <!-- HTML -->
+  <button id="toggle-btn">Toggle Highlight</button>
+  <div id="content-box" class="box">Watch my style change!</div>
+
+  <!-- JavaScript -->
+  <script>
+    function setupClassToggle(buttonSelector, targetSelector, className) 
+    {
+      const button = document.querySelector(buttonSelector);
+      const targetElement = document.querySelector(targetSelector);
+
+      if (button && targetElement) 
+      {
+        button.addEventListener('click', () => {
+        targetElement.classList.toggle(className);
+        });
+      }
+    }
+
+    setupClassToggle('#toggle-btn', '#content-box', 'is-active');
+  </script>
+
+</body>
+</html>
